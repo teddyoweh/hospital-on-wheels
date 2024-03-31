@@ -1,0 +1,669 @@
+.app{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    padding: 17px;
+    height: 100vh;
+  
+    .infobox{
+        width: 380px;
+        height: 100%;
+        background-color: white;
+        margin-left: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 50px #c6c6c6;
+
+        .top{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding:25px 15px;
+            padding-bottom: 10px;
+            .btn{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-left: 7px;
+                cursor: pointer;
+                label{
+                    font-weight: 500;
+                    color: #222;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    font-family: "Google Sans";
+                    cursor: pointer;
+                
+                }
+            }
+            .searchbox{
+                width: 88%;
+                border-width: 1px;
+    border-style: solid;
+    // border-color: #f1f1f1;
+    border-color: #333;
+ 
+    padding: 11px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 60px;
+    background: white;
+                i{
+                    color: #333;
+                    font-size: 20px;
+                    font-weight: 600;
+                    
+                }
+                input{
+                    border: none;
+                    width: 100%;
+                    outline: none;
+                    font-family: "Google Sans";
+                    margin-left: 6px;
+                    &::placeholder{
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #333;
+                    }
+                }
+            }
+        }
+        .content{
+            padding: 5px 15px;
+            max-height: 89%;
+            overflow: scroll;
+            .service{
+                cursor: pointer;
+                background: linear-gradient(190deg, #f3f3f3, #f9f9f9);
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                padding: 10px 15px;
+                border-radius: 19px;
+                border-width: 1px 1px 1px;
+                /* border-style: solid; */
+                border-color: transparent;
+                transition: 0.4s;
+                border-width: 2px;
+                border-style: solid;
+                &.active{
+
+                    transition: 0.4s;
+                    border-color: #3e37f9;
+
+    background: linear-gradient(190deg, #98b1f02e, #d9e1ff);
+    label{
+        color: #3e37f9;
+
+    }
+    span{
+        color: #3e37f9;
+    }
+                }
+                label{
+                    font-weight: 400;
+                    color: #000;
+                    font-size: 18px;
+                    font-family: "Google Sans";
+                    cursor: pointer;
+                }
+                span{
+                    margin-top: 3px;
+                    font-weight: 400;
+                    line-height: 1.3;
+                    color: #acafb6;
+                    font-size: 13px;
+                    font-family: "Google Sans";
+                }
+            }
+        }
+      
+    }
+    .nurses{
+        position: fixed;
+        right: 0px;
+        bottom: 17px;
+        max-width: 66.5%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        overflow-x: scroll;
+        padding-top: 41px;
+        -ms-overflow-style: none;
+
+        /* For Firefox */
+        scrollbar-width: none;
+      
+        /* For Chrome, Safari, and Opera */
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .nurse{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            // height: 160px;
+            background: white;
+            margin-left: 12px;
+            box-shadow: 0px 0px 50px #c6c6c6;
+            border-radius: 16px;
+            padding: 20px;
+            transition: 0.3s;
+            .calendar{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+                .date{
+                    display: flex;
+                    width: 100%;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    label{
+                        color: #3e37f9;
+                        font-weight: 500;
+                        font-size: 16px;
+                        font-family: "Google Sans";
+                    }
+                    .btn{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                        transition: 0.4s;
+                        background-color: #eee;
+                        i{
+                            font-size: 20px;
+                            color: #a3a3a3;
+                        }
+                        &:hover{
+                            background-color: #f1f1f1;
+                        }
+                    
+                    }
+                }
+                .days{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    .day{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 100%;
+                        margin-right: 10px;
+                        margin-top: 10px;
+                        cursor: pointer;
+                        transition: 0.4s;
+                        &:hover{
+                            background-color: #f1f1f1;
+                        }
+                        &.active{
+                            background-color: #3e37f9;
+                            label{
+                                color: white;
+                            }
+                        }
+                        label{
+                            font-weight: 500;
+                            color: #acafb6;
+                            font-size: 14px;
+                            font-family: "Google Sans";
+                        }
+                    
+                    }
+                }
+            }
+        }
+        .top{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 548px;
+            margin-bottom: 30px;
+            .left{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .book-btn{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .btn{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 10px;
+                    cursor: pointer;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 100%;
+                    transition: 0.4s;
+                    background-color: #eee;
+                    i{
+                        font-size: 20px;
+                        color: #a3a3a3;
+                    }
+                    &:hover{
+                        background-color: #f1f1f1;
+                    }
+                
+                }
+                button{
+                    border: none;
+                    border-radius: 60px;
+                    padding: 10px 20px;
+                    font-family: "Google Sans";
+                    font-size: 14px;
+                    color: white;
+                    font-weight: 600;
+                    cursor: pointer;
+                    background: #3e38f5;
+                    transition: 0.4s;
+                    &:focus{
+                        outline: none;
+                    }
+                    &:hover{
+                        transition: 0.4s;
+                        background: #605bf8;
+                    }
+                
+                    i{
+                        font-size: 16px;
+                        color: white;
+                        margin-left: 6px;
+                        font-weight: 600;
+                    
+                    }
+                }
+            }
+            img{
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                object-fit: cover;
+                object-position: center;
+
+                
+            }
+            .details{
+                margin-left: 10px;
+                label{
+                    font-weight: 500;
+                    color: #222;
+                    font-size: 19px;
+                    font-family: "Google Sans";
+                }
+            }
+        }
+        .bottom{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            .sec{
+                display: flex;
+                flex-direction: column;
+                margin-right: 20px;
+                label{
+                  
+                    font-weight: 500;
+                    color: #acafb6;
+                    font-size: 14px;
+                    font-family: "Google Sans";
+                }
+                span{
+                    font-weight: 500;
+                    color: #222;
+                    font-size: 19px;
+                    font-family: "Google Sans";
+                }
+            }
+        }
+    }
+}
+
+
+.aimodal{
+    background-color: #00000091;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    .modal{
+        width: 45%;
+        height: 90%;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0px 0px 50px #545454;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .content{
+            .chat{
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                audio{
+                    visibility: hidden;
+                    position: absolute;
+                }
+                .loader {
+                    transform: rotateZ(45deg);
+                    perspective: 1000px;
+                    border-radius: 50%;
+                    width: 48px;
+                    height: 48px;
+                    color: #aaa;
+                  }
+                    .loader:before,
+                    .loader:after {
+                      content: '';
+                      display: block;
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: inherit;
+                      height: inherit;
+                      border-radius: 50%;
+                      transform: rotateX(70deg);
+                      animation: 1s spin linear infinite;
+                    }
+                    .loader:after {
+                      color: #3e37f9;
+                      transform: rotateY(70deg);
+                      animation-delay: .4s;
+                    }
+            
+                  @keyframes rotate {
+                    0% {
+                      transform: translate(-50%, -50%) rotateZ(0deg);
+                    }
+                    100% {
+                      transform: translate(-50%, -50%) rotateZ(360deg);
+                    }
+                  }
+            
+                  @keyframes rotateccw {
+                    0% {
+                      transform: translate(-50%, -50%) rotate(0deg);
+                    }
+                    100% {
+                      transform: translate(-50%, -50%) rotate(-360deg);
+                    }
+                  }
+            
+                  @keyframes spin {
+                    0%,
+                    100% {
+                      box-shadow: .2em 0px 0 0px currentcolor;
+                    }
+                    12% {
+                      box-shadow: .2em .2em 0 0 currentcolor;
+                    }
+                    25% {
+                      box-shadow: 0 .2em 0 0px currentcolor;
+                    }
+                    37% {
+                      box-shadow: -.2em .2em 0 0 currentcolor;
+                    }
+                    50% {
+                      box-shadow: -.2em 0 0 0 currentcolor;
+                    }
+                    62% {
+                      box-shadow: -.2em -.2em 0 0 currentcolor;
+                    }
+                    75% {
+                      box-shadow: 0px -.2em 0 0 currentcolor;
+                    }
+                    87% {
+                      box-shadow: .2em -.2em 0 0 currentcolor;
+                    }
+                  }
+               
+                &.user{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    width: 100%;
+ 
+                   
+                    label{
+                        background-color: #3e37f9;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 20px;
+                        font-family: "Google Sans";
+                        font-size: 14px;
+                        font-weight: 500;
+                        max-width: 60%;
+                        word-wrap: break-word;
+                    }
+                }
+                &.bot{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+         
+                    label{
+                        background-color: #f1f1f1;
+                        color: #000;
+                        padding: 10px 20px;
+                        border-radius: 20px;
+                        font-family: "Google Sans";
+                        font-size: 14px;
+                        font-weight: 500;
+                        max-width: 60%;
+                        word-wrap: break-word;
+                    }
+                   
+                }
+                label{
+                    font-family: "Google Sans";
+                    font-size: 14px;
+                    color: #000;
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                
+                }
+            }
+        }
+        .bottom{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+            .message-box{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+           
+                background-color: #f1f1f1;
+                border-radius: 60px;
+                padding: 15px 20px;
+                .left{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 100%;
+                    
+                    .btn{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 6px;
+                        cursor: pointer;
+                      
+                        // border-width: 1px;
+                        // border-style: solid;
+                        // border-color: #ddd;
+                        .stop{
+                        background-color: rgb(222, 12, 12);
+                        height: 15px;
+                        width: 15px;
+                        border-radius:5px;
+                        }
+                        i{
+                            font-size: 20px;
+                            color: #a3a3a3;
+                        
+                        }
+                    }
+                }
+              
+                i{
+                    color: #a3a3a3;
+                    font-size: 20px;
+                    font-weight: 600;
+                  
+                    cursor: pointer;
+                }
+                input{
+                    border: none;
+                    background-color: transparent;
+                    font-family: "Google Sans";
+                    width: 100%;
+                    outline: none;
+                    &::placeholder{
+                        font-family: "Google Sans";
+                        font-size: 14px;
+                        color: #a3a3a3;
+                    }
+                }
+            }
+        }
+        .top{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .head{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                border-width: 0px 0px 1px;
+                border-style: solid;
+                padding: 20px;
+                padding-bottom: 10px;
+                border-color: #ddd;
+                .left{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    label{
+                        font-weight: 500;
+                        color: #222;
+                        font-size: 20px;
+                        font-family: "Google Sans";
+                        margin-left: 5px;
+                    }
+                }
+                .right{
+                    .btn{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                        transition: 0.4s;
+                        background-color: #eee;
+                        i{
+                            font-size: 20px;
+                            color: #a3a3a3;
+                        }
+                        &:hover{
+                            background-color: #f1f1f1;
+                        }
+                       
+                    }
+                }
+                
+            }
+
+        }
+    }
+}
+
+
+ 
+ 
+
+*{
+    box-sizing: border-box;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+.slide-up{
+  animation-name: slideFadeUp;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.slide-up1{
+  animation-name: slideFadeUp;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes slideFadeUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+.slide-down {
+  animation-name: slideFadeDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideFadeDown {
+  0% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+}

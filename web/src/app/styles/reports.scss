@@ -1,0 +1,149 @@
+.report{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    padding: 17px;
+    height: 100vh;
+    width:90vw;
+    .upload-box{
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        label{
+            font-family: "Google Sans";
+            font-size: 20px;
+            font-weight: 500;
+            color: #000;
+            margin-top: 10px;
+        }
+
+    }
+    .report-content{
+        width: 100%;
+      
+    }
+    .top-report{
+        padding: 20px;
+        input{
+        
+        }
+        .input{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 10px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .btn{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                border-radius: 100%;
+                transition: 0.4s;
+                background-color: #eee;
+                i{
+                    font-size: 20px;
+                    color: #a3a3a3;
+                }
+                &:hover{
+                    background-color: #f1f1f1;
+                }
+               
+            }
+        }
+        input{
+            width: 100%;
+            font-family: "Google Sans";
+            font-size: 16px;
+            color: #000;
+            border: none;
+            outline: none;
+            font-weight: 400;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+        
+        }
+    }
+    .top_{
+        width: 60%;
+        padding: 20px;
+        label{
+            font-family: "Google Sans";
+            font-size: 20px;
+            font-weight: 500;
+            color: #000;
+        }
+    }
+    .searchbox{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        width: 100%;
+        i{
+            font-size: 20px;
+            color: #000;
+            margin-right: 13px;
+        }
+        input{
+            width: 100%;
+ 
+            font-family: "Google Sans";
+            font-size: 14px;
+            color: #000;
+            border: none;
+            outline: none;
+            font-weight: 400;
+        }
+        
+    }
+    .right{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+    .upload-btn{
+        margin-left: 10px;
+        width: 30%;
+        button{
+            background-color: #3e37f9;
+            color: white;
+            font-family: "Google Sans";
+            font-size: 12px;
+            font-weight: 500;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            width: 100%;
+            label{
+                margin-left: 10px;
+                color: #fff;
+                width: 100%;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            transition: 0.4s;
+            &:hover{
+                background-color: #3d37f9dd;
+            }
+        }
+    }
+}
