@@ -14,6 +14,9 @@ export const endpoints = {
     verifyAuth: wrapEndpoint('auth/verify'),
     getNurses: wrapEndpoint('nurses/get'),
     chatBase: wrapEndpoint('base/chat'),
+    getReports: wrapEndpoint('base/get_reports'),
+    getBooking: wrapEndpoint('base/get_booking'),   
+    createBooking:wrapEndpoint('base/complete_booking')
 }
 
 export const api = axios.create({

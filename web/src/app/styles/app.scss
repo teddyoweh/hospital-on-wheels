@@ -124,9 +124,9 @@
     }
     .nurses{
         position: fixed;
-        right: 0px;
+   right: 20px;
         bottom: 17px;
-        max-width: 66.5%;
+        max-width: 63.5%;
         display: flex;
         flex-direction: row;
         align-items: flex-end;
@@ -191,6 +191,7 @@
                     
                     }
                 }
+
                 .days{
                     display: flex;
                     flex-direction: row;
@@ -208,6 +209,7 @@
                         margin-top: 10px;
                         cursor: pointer;
                         transition: 0.4s;
+
                         &:hover{
                             background-color: #f1f1f1;
                         }
@@ -226,6 +228,47 @@
                     
                     }
                 }
+                .times{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 20px;
+                    .time{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px 20px;
+                        border-radius:60px;
+                        margin-right: 10px;
+                        margin-top: 10px;
+                        cursor: pointer;
+                        transition: 0.4s;
+                        background-color: #f1f1f1;
+                        &:hover{
+                            background-color: #3e37f9;
+                            label{
+                                color: white;
+                            }
+                        }
+                        &.active{
+                            background-color: #3e37f9;
+                            label{
+                                color: white;
+                            }
+                        }
+                        label{
+                            font-weight: 500;
+                            color: #acafb6;
+                            font-size: 12px;
+                            font-family: "Google Sans";
+                            cursor: pointer;
+                        }
+                    
+                    }
+                
+                }
             }
         }
         .top{
@@ -233,7 +276,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            width: 548px;
+            width:910px;
             margin-bottom: 30px;
             .left{
                 display: flex;
@@ -244,6 +287,11 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                &.green{
+                  button{
+                    background-color: rgb(14, 169, 14);
+                  }
+                }
                 .btn{
                     display: flex;
                     flex-direction: column;
@@ -556,6 +604,7 @@
                 }
             }
         }
+      
         .top{
             display: flex;
             flex-direction: column;

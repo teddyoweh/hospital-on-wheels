@@ -41,7 +41,7 @@ export default function Home() {
     };
 
     const fail = () => {
-      setError('Unable to retrieve your location');
+ 
       // You could fallback to IP-based location here if desired
     };
 
@@ -62,6 +62,27 @@ export default function Home() {
     getNurses()
   }
   , []);
+  const [activeDay, setActiveDay] = useState(null);
+  const [activeTime, setActiveTime] = useState(null);
+  const [hasbooked,sethasbooking]= useState(null)
+  const [issues,setIssues] = useState('')
+  const [loading, setLoading] = useState(false);
+  async function completeBooking(){
+    setLoading(true)
+    await api.post(endpoints.createBooking,{
+      email:"ifowe1@morgan.edu",
+      service:services[activeService],
+      issue:issues,
+      activeDay,
+      activeTime,
+      
+
+    }).then(res=>{
+      sethasbooking(true)
+      setLoading(false)
+    })
+  }
+
   return (
 
  
@@ -116,6 +137,7 @@ activeService &&
       {
         nurses && nurses.map((nurse,index)=>{
           return (
+            nurse.specialty==services[activeService].field&&
             <div className="nurse">
             <div className="top">
               <div className="left">
@@ -131,15 +153,19 @@ activeService &&
                   </span> */}
                 </div>
                 </div>
-                <div className="book-btn">
+                <div className={hasbooked?"book-btn green":"book-btn"}>
                   <button
                   onClick={()=>{
                     setActiveNurse(index)
+                    if(activeNurse&&activeTime&&activeDay){
+  
+                      completeBooking()
+                    }
                   
                   }}
                   
                   >
-                   {activeNurse==index?"Complete Booking":"Book"}
+                   {hasbooked?"Booked!":activeNurse==index?"Complete Booking":"Book"}
                    <i class='bx bx-check'></i>
                   </button>
                 { activeNurse==index&& <div className="btn"
@@ -181,7 +207,10 @@ activeService &&
      
             <div className="calendar">
                 <div className="date">
-                  <div className="btn">
+                  <div className="btn"
+                  
+                  
+                  >
                   <i class='bx bx-chevron-left'></i>                  </div>
                   <div className="yearm">
                     <label htmlFor="">
@@ -195,7 +224,9 @@ activeService &&
                   {
                     [...Array(31)].map((day,index)=>{
                       return (
-                        <div className="day">
+                        <div className={activeDay==index?"day active":"day"}
+                        onClick={()=>setActiveDay(index)}
+                        >
                           <label htmlFor="">
                             {index+1}
                           </label>
@@ -204,6 +235,25 @@ activeService &&
                     })
                   }
                 </div>
+                {
+                  activeDay &&
+                  <div className="times">
+                    {
+                      [...Array(24)].slice(5,10).map((time,index)=>{
+                        return (
+                          <div className={activeTime==index?"time active":"time"}
+                          onClick={()=>setActiveTime(index)}
+                          
+                          >
+                            <label htmlFor="">
+                              {index+1}:00
+                            </label>
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
+                }
             </div>
                    }
     
@@ -218,16 +268,16 @@ activeService &&
     </div>
        }
  </div>
-{showModal && <AIModal setModal={setShowModal} />}
+{showModal && <AIModal setModal={setShowModal} setTranscript={setIssues} transcript={issues} />}
  </>
   );
 }
 
 
-function AIModal({setModal}){
+function AIModal({setModal,transcript,setTranscript}){
   const [endText, setEndText] = useState(false);
   let recognition = null;
-  const [transcript, setTranscript] = useState('');
+  // const [transcript, setTranscript] = useState('');
   const [mic, setMic] = useState(false);
   const [chatHistory, setChatHistory] = useState([
  

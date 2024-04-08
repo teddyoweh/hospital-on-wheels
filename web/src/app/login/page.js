@@ -1,7 +1,10 @@
+"use client"
 import '../styles/auth.scss';
 import logo from '../assets/logo.png';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 export default function Page() {
+    const router =useRouter()
     return (
         <div className="auth">
         <div className="top">
@@ -38,7 +41,12 @@ export default function Page() {
                 <a href="">Forgot password?</a>
             </div>
             <div className="group">
-                <button>Login</button>
+                <button
+                onClick={()=>{
+                   router.push('/')
+                }}
+                
+                >Login</button>
             </div>
             <div className="group-btm">
                 <label htmlFor="">Don't have an account? <a href="/register">Sign up</a></label>

@@ -13,6 +13,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        input{
+            opacity: 0;
+            position: absolute;
+            cursor: pointer;
+        }
+        
         label{
             font-family: "Google Sans";
             font-size: 20px;
@@ -24,18 +30,37 @@
     }
     .report-content{
         width: 100%;
+        .report-box{
+            padding: 20px;
+            label{
+                font-family: "Google Sans";
+                font-size: 20px;
+                font-weight: 400;
+                color: #000;
+
+            }
+            span{
+                font-family: "Google Sans";
+                font-size: 16px;
+                font-weight: 500;
+                color: #3e37f9;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+
+        }
       
     }
     .top-report{
         padding: 20px;
         input{
-        
+            margin-right: 10px;
         }
         .input{
             display: flex;
             flex-direction: row;
             align-items: center;
-            margin-right: 10px;
+          
 
             display: flex;
             flex-direction: row;
@@ -143,6 +168,128 @@
             transition: 0.4s;
             &:hover{
                 background-color: #3d37f9dd;
+            }
+        }
+    }
+}
+
+
+.booking-page{
+    .empty-booking{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        label{
+            font-family: "Google Sans";
+            font-size: 20px;
+            font-weight: 500;
+            color: #000;
+            margin-top: 10px;
+        }
+        span{
+            font-family: "Google Sans";
+            font-size: 16px;
+            font-weight: 400;
+            color: #000;
+            margin-top: 10px;
+        }
+    }.bok{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .booking-section{
+        margin-left: 40px;
+        background-color: #f5f5f5;
+        padding: 20px;
+        height: 400px;
+        width: 50vw;
+        border-radius: 10px;
+        .top{
+            margin-bottom: 20px;
+        }
+        .left{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            img{
+                height: 60px;
+                width: 60px;
+                border-radius: 100%;
+            }
+            label{
+                font-family: "Google Sans";
+                font-size: 20px;
+                font-weight: 500;
+                color: #000;
+                margin-left: 10px;
+            
+            }
+        }
+        .mid{display: flex;
+        flex-direction: row;
+            .sec{
+                display: flex;
+                flex-direction: column;
+                margin-right: 20px;
+                label{
+                    font-family: "Google Sans";
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #a3a3a3;
+                    margin-top: 10px;
+                
+                }
+                span{
+                    font-family: "Google Sans";
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #000;
+             
+                
+                }
+            }
+    
+    }
+    }
+    .checklist{
+        margin-left: 40px;
+        background-color: #f1f1f1;
+        padding: 20px;
+        height: 600px;
+        width: 20vw;
+        border-radius: 10px;
+        .title{
+            label{
+                font-family: "Google Sans";
+                font-size: 20px;
+                font-weight: 500;
+                color: #000;
+            }
+        }
+        .body{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            .check{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                width: 100%;
+                label{
+                    font-family: "Google Sans";
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #000;
+                    margin-left: 10px;
+                }
+                input{
+                    margin-right: 10px;
+                }
             }
         }
     }

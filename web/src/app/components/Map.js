@@ -134,12 +134,12 @@ function getCoordsArray(data) {
 
       >
         <CustomMarker position={center} />
-        {nurses && getCoordsArray(nurses).map((nurse, index) => (
+        {/* {nurses && getCoordsArray(nurses).map((nurse, index) => (
           <NursesMarkerMarker position={{
             lat: nurse.lat,
             lng: nurse.lng,
           }} img={nurse.img} key={index} />
-        ))}
+        ))} */}
 
       </GoogleMap>
     </div>
